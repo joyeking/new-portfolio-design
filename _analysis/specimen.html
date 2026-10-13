@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Design read — specimen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Archivo:wdth,wght@62..125,100..900&family=Oswald:wght@500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400;1,6..72,500&family=Playfair+Display:ital,wght@1,500;1,600&family=Fraunces:ital,opsz,wght@1,9..144,400&family=Manrope:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#e6e4de;color:#141311;font:15px/1.6 Manrope,sans-serif}
+  .wrap{width:min(1240px,100% - 48px);margin-inline:auto;padding:40px 0 80px}
+  h2{font:600 13px/1 DM Mono,monospace;letter-spacing:.16em;text-transform:uppercase;color:#7b7973;margin:56px 0 18px;border-top:1px solid #c9c6bd;padding-top:18px}
+  .row{display:grid;gap:14px}
+  .card{background:#eae8e2;border:1px solid #d3d0c7;padding:22px 24px}
+  .lbl{font:500 11px/1 DM Mono,monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a877f;margin-bottom:12px}
+
+  /* palette */
+  .sw{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{width:150px}
+  .chip i{display:block;height:74px;border:1px solid #0002}
+  .chip span{display:block;font:500 11px/1.5 DM Mono,monospace;margin-top:7px;color:#4a4842}
+
+  /* display candidates */
+  .disp{font-size:clamp(46px,7vw,96px);line-height:.92;letter-spacing:-.01em;text-transform:uppercase;margin:0}
+  .ant{font-family:Anton,sans-serif;font-weight:400;letter-spacing:.005em}
+  .abl{font-family:'Archivo Black',sans-serif;font-weight:400;letter-spacing:-.02em}
+  .arc{font-family:Archivo,sans-serif;font-variation-settings:'wdth' 88,'wght' 800;letter-spacing:-.022em}
+  .arcw{font-family:Archivo,sans-serif;font-variation-settings:'wdth' 78,'wght' 800;letter-spacing:-.015em}
+  .osw{font-family:Oswald,sans-serif;font-weight:700;letter-spacing:-.005em}
+
+  /* serif italic candidates */
+  .ital{font-size:clamp(34px,4.6vw,64px);line-height:1;font-style:italic;margin:0}
+  .n-i{font-family:Newsreader,serif;font-weight:400}
+  .p-i{font-family:'Playfair Display',serif;font-weight:500}
+  .f-i{font-family:Fraunces,serif;font-weight:400}
+
+  /* the collision, as the reference composes it */
+  .hero{display:grid;grid-template-columns:1fr 300px;gap:34px;align-items:start}
+  .lead{font:400 clamp(21px,2.3vw,30px)/1.25 Newsreader,serif;margin:0 0 6px}
+  .mix{font-size:clamp(52px,7.4vw,104px);line-height:.9;text-transform:uppercase}
+  .mix .g{font-family:Archivo,sans-serif;font-variation-settings:'wdth' 86,'wght' 850;letter-spacing:-.025em;display:block}
+  .mix .s{font-family:Newsreader,serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.01em;display:block;font-size:.92em}
+  .stats{display:grid;gap:22px;text-align:right}
+  .stats b{display:block;font:700 clamp(24px,2.6vw,34px)/1 Manrope,sans-serif;letter-spacing:-.03em}
+  .stats span{display:block;font:400 13px/1.4 Newsreader,serif;color:#6e6b64;margin-top:4px}
+  .pill{display:inline-flex;align-items:center;gap:12px;background:#141311;color:#e6e4de;border-radius:999px;padding:13px 16px 13px 24px;font:700 12px/1 Manrope,sans-serif;letter-spacing:.1em;text-transform:uppercase;margin-top:26px}
+  .pill i{width:26px;height:26px;border-radius:50%;background:#e6e4de;color:#141311;display:grid;place-items:center;font-style:normal;font-size:13px}
+  .strip4{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #b9b6ac}
+  .strip4 div{padding:18px 20px 4px 0;border-right:1px solid #b9b6ac}
+  .strip4 div:last-child{border-right:0}
+  .strip4 b{display:block;font:700 13px/1.3 Manrope,sans-serif;letter-spacing:.01em;text-transform:uppercase;margin-bottom:7px}
+  .strip4 p{margin:0;font:400 12.5px/1.55 Newsreader,serif;color:#7b7973;max-width:30ch}
+  .grid8{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #c9c6bd;background:#e2e0d9}
+  .grid8 div{padding:20px;border-right:1px solid #c9c6bd;border-bottom:1px solid #c9c6bd;font:600 15px/1 Manrope,sans-serif;color:#a3a09a;letter-spacing:-.01em}
+  .grid8 div:nth-child(4n){border-right:0}
+  .grid8 div:nth-child(n+5){border-bottom:0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h2>1 — Palette read from the reference</h2>
+  <div class="sw">
+    <div class="chip"><i style="background:#e6e4de"></i><span>paper #e6e4de</span></div>
+    <div class="chip"><i style="background:#eae8e2"></i><span>raised #eae8e2</span></div>
+    <div class="chip"><i style="background:#dedcd4"></i><span>cell #dedcd4</span></div>
+    <div class="chip"><i style="background:#141311"></i><span>ink #141311</span></div>
+    <div class="chip"><i style="background:#7b7973"></i><span>muted #7b7973</span></div>
+    <div class="chip"><i style="background:#b9b6ac"></i><span>hairline #b9b6ac</span></div>
+    <div class="chip"><i style="background:#c2603d"></i><span>accent? #c2603d</span></div>
+  </div>
+
+  <h2>2 — Display face candidates (all set at identical size)</h2>
+  <div class="row">
+    <div class="card"><div class="lbl">A — Anton</div><p class="disp ant">A UI/UX Designer</p></div>
+    <div class="card"><div class="lbl">B — Archivo Black</div><p class="disp abl">A UI/UX Designer</p></div>
+    <div class="card"><div class="lbl">C — Archivo 800 / wdth 88</div><p class="disp arc">A UI/UX Designer</p></div>
+    <div class="card"><div class="lbl">D — Archivo 800 / wdth 78</div><p class="disp arcw">A UI/UX Designer</p></div>
+    <div class="card"><div class="lbl">E — Oswald 700</div><p class="disp osw">A UI/UX Designer</p></div>
+  </div>
+
+  <h2>3 — Italic serif candidates (the reference's counter-voice)</h2>
+  <div class="row">
+    <div class="card"><div class="lbl">A — Newsreader italic</div><p class="ital n-i">&amp; Brand — Hey, I'm a designer</p></div>
+    <div class="card"><div class="lbl">B — Playfair Display italic</div><p class="ital p-i">&amp; Brand — Hey, I'm a designer</p></div>
+    <div class="card"><div class="lbl">C — Fraunces italic</div><p class="ital f-i">&amp; Brand — Hey, I'm a designer</p></div>
+  </div>
+
+  <h2>4 — The collision, composed as the reference does it</h2>
+  <div class="card hero">
+    <div>
+      <p class="lead">Hey. I'm Yohannes,</p>
+      <p class="mix"><span class="g">A UI/UX</span><span class="s">&amp; Brand</span><span class="g">Designer</span></p>
+      <span class="pill">Contact me <i>&rarr;</i></span>
+    </div>
+    <div class="stats">
+      <div><b>5+</b><span>Years Experience</span></div>
+      <div><b>7</b><span>Projects Delivered</span></div>
+      <div><b>10+</b><span>Clients worldwide</span></div>
+    </div>
+  </div>
+
+  <h2>5 — Hairline service strip</h2>
+  <div class="strip4">
+    <div><b>User-Centered Design</b><p>Intuitive and engaging experiences tailored for your audience.</p></div>
+    <div><b>Brand Identity &amp; Strategy</b><p>Strong visual storytelling that makes your brand unforgettable.</p></div>
+    <div><b>Responsive &amp; Modern UI</b><p>Pixel-perfect designs optimised for every device.</p></div>
+    <div><b>Seamless Prototyping</b><p>Interactive mockups to bring ideas to life before development.</p></div>
+  </div>
+
+  <h2>6 — Bordered logo grid ("trusted by")</h2>
+  <div class="grid8">
+    <div>ETtravel</div><div>JoyInterior</div><div>Gwarinpa</div><div>Museum of Art</div>
+    <div>Afri Buna</div><div>VisualForms</div><div>Purposeblack</div><div>Joye Design</div>
+  </div>
+
+</div>
+</body>
+</html>
