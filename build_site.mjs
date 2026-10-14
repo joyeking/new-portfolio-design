@@ -202,7 +202,7 @@ const PROJECTS = [
     desc: 'ReadBible brings reading, plans, saved passages, notes, prayer, and study tools into one system for phone, desktop, and browser.',
     year: '2026', industry: 'Faith & spirituality', client: 'ReadBible', duration: 'Ongoing',
     pages: 'Web · desktop · iPhone', stack: 'A reading-centred system that adapts its tools to phone, desktop, and browser.',
-    cover: `${W}/readbible-main.png`,
+    cover: `${W}/readbible-main.jpg`,
     gallery: [`${W}/bible-1.jpg`, `${W}/bible-3.jpg`, `${W}/bible-desktop.jpg`],
     brief: 'A Bible reader that had to feel like a quiet place in the word — not a database with verses inside it. Reading, plans, saved passages and prayer designed as one calm habit, on every device the reader owns.',
     shipped: 'A reading app on three surfaces — a web reader, a desktop app and an iPhone app — with the verse of the day, reading plans, a Bible reader, bookmarks, highlights, notes, a prayer list, study tools and settings, in light and dark themes, plus a reading streak.',
@@ -231,12 +231,12 @@ const ARCHIVE = [
     kind: 'Brand & packaging', year: '2024', tag: 'Brand · Package',
     problem_line: 'Create a recognizable coffee identity that holds together from a quick shelf read to the packaging details.',
     desc: 'A clear wordmark, warm coffee cues, and an ingredient hierarchy give the pack a consistent voice while keeping product details easy to find.',
-    image: 'assets/site/CJkc3GHzJFwVSDaaoW080VOpfCA.png', pages: 'Identity · pack · guidelines', duration: '4 weeks' },
+    image: `${W}/afribuna-cover.jpg`, pages: 'Identity · pack · guidelines', duration: '4 weeks' },
   { slug: 'dream-faith-journey-book', cat: 'Graphic Design', title: 'Dream, Faith, Journey',
     kind: 'Editorial · cover series', year: '2024', tag: 'Editorial · Cover',
     problem_line: 'Give an abstract story a visual language that feels both hopeful and grounded.',
     desc: 'A restrained cover system pairs symbolic forms with a confident type hierarchy, making the themes of belief and change visible without illustrating them literally.',
-    image: 'assets/site/kR7pZLeRelrpLxpU2cTSOh45SdE.png', pages: '3 covers · system', duration: '6 weeks' },
+    image: `${W}/dreambook-cover.jpg`, pages: '3 covers · system', duration: '6 weeks' },
 
   // poster & app work — portrait artwork, shown whole (figure: poster / phone)
   { slug: 'habesha-beer-poster', cat: 'Graphic Design', title: 'Habesha Beer — Rooftop Night',
@@ -327,7 +327,7 @@ function livePreview(p, depth) {
 </div>
 <div class="frame-stage"><div class="frame-screen" style="width:100%">
 <button class="frame-load" data-src="${p.visit}" data-title="${p.title}" type="button">
-<img src="${rel(depth, p.cover)}" alt="${p.title} cover">
+<img src="${rel(depth, p.cover)}" alt="${p.title} cover" loading="lazy">
 <span>Load the live experience</span>
 </button>
 </div></div></div>`;
@@ -340,8 +340,8 @@ function staticScreens(p, depth) {
   // Per-entry shots when the entry supplies them (ReadBible desktop/phone);
   // otherwise the legacy presentation mockups keyed off the slug.
   const shots = p.shots || (p.slug === 'afri-buna-packed-coffee'
-    ? [['Desktop', 'presentation-assets/coffee/d1.png', '100%'], ['Phone', 'presentation-assets/coffee/m1.png', '390px']]
-    : [['Desktop', 'presentation-assets/book/d1.png', '100%'], ['Phone', 'presentation-assets/book/m1.png', '390px']]);
+    ? [['Desktop', `${W}/afribuna-desktop.jpg`, '100%'], ['Phone', `${W}/afribuna-phone.jpg`, '390px']]
+    : [['Desktop', `${W}/dreambook-desktop.jpg`, '100%'], ['Phone', `${W}/dreambook-phone.jpg`, '390px']]);
   const buttons = shots.map(([label, src, w], i) =>
     `<button class="device${i === 0 ? ' is-active' : ''}" data-img="${rel(depth, src)}" data-w="${w}" type="button" aria-pressed="${i === 0}">${label}</button>`).join('');
   const frame = `<div class="browser-frame" data-sc-in data-sc-spotlight>
@@ -353,7 +353,7 @@ function staticScreens(p, depth) {
 ${buttons}
 </div>
 <div class="frame-stage"><div class="frame-screen" style="width:min(${shots[0][2]}, 100%)">
-<img class="showcase-img" src="${rel(depth, shots[0][1])}" alt="${p.title} — ${shots[0][0].toLowerCase()}" style="width:100%;height:100%;object-fit:contain;object-position:top;display:block">
+<img class="showcase-img" src="${rel(depth, shots[0][1])}" alt="${p.title} — ${shots[0][0].toLowerCase()}" loading="lazy" style="width:100%;height:100%;object-fit:contain;object-position:top;display:block">
 </div></div></div>`;
   const script = `<script>
 document.querySelectorAll('.showcase-toggle .device').forEach(function(btn){
@@ -439,7 +439,7 @@ const prismSlides = PROJECTS.map((p, i) =>
   </a>`).join('');
 const prismProgress = PROJECTS.map((p, i) =>
   `<button type="button" class="prism-tick${i === 0 ? ' is-active' : ''}" data-prism-tick="${i}" aria-label="Show ${p.title}" aria-current="${i === 0}"><span></span></button>`).join('');
-const home = `<section class="hero" data-sc-act="flow"><div class="wrap hero-grid"><div class="hero-copy"><h1 data-home-title><span>Make the</span><em>complex</em><span>clear.</span></h1><p class="hero-desc" data-home-copy>I help people understand what matters and what to do next. That starts with the problem behind the brief, then becomes a clear information system, a visual language, and an experience that works across screens.</p><div class="hero-actions"><a data-route class="button" href="projects/index.html">Explore the work <span class="orb">${ic('arrow-right')}</span></a><a class="button alt" href="#contact">Talk through a brief <span class="orb">${ic('arrow-right')}</span></a></div><p class="meta-row" data-home-meta><span class="dot-live">Available for new work</span><span>${ic('pin')}Addis Ababa, Ethiopia</span><span>${ic('clock')}Replies within a working day</span></p></div><div class="hero-media" data-home-portrait><img class="hero-portrait" src="assets/work/portrait-reference.png" alt="Yohannes Assefa"><p class="portrait-cap">${ic('check')}Research · Structure · Interaction · Delivery</p></div><aside class="hero-stats" data-home-stats aria-label="Design principles"><span>Find what is getting in the way</span><span>Give information a useful order</span><span>Make the next action feel natural</span></aside></div></section>
+const home = `<section class="hero" data-sc-act="flow"><div class="wrap hero-grid"><div class="hero-copy"><h1 data-home-title><span>Make the</span><em>complex</em><span>clear.</span></h1><p class="hero-desc" data-home-copy>I help people understand what matters and what to do next. That starts with the problem behind the brief, then becomes a clear information system, a visual language, and an experience that works across screens.</p><div class="hero-actions"><a data-route class="button" href="projects/index.html">Explore the work <span class="orb">${ic('arrow-right')}</span></a><a class="button alt" href="#contact">Talk through a brief <span class="orb">${ic('arrow-right')}</span></a></div><p class="meta-row" data-home-meta><span class="dot-live">Available for new work</span><span>${ic('pin')}Addis Ababa, Ethiopia</span><span>${ic('clock')}Replies within a working day</span></p></div><div class="hero-media" data-home-portrait><img class="hero-portrait" src="assets/work/portrait-reference.jpg" alt="Yohannes Assefa" fetchpriority="high" decoding="async"><p class="portrait-cap">${ic('check')}Research · Structure · Interaction · Delivery</p></div><aside class="hero-stats" data-home-stats aria-label="Design principles"><span>Find what is getting in the way</span><span>Give information a useful order</span><span>Make the next action feel natural</span></aside></div></section>
 <section class="section section-line friction-map"><div class="wrap"><div class="sec-head" data-sc-in><h2 class="section-heading">Clarity is a design outcome.</h2><p class="section-note">A better interface is not decoration added to a problem. It is a route through the problem, made visible.</p></div><div class="friction-list" data-sc-in><article><b>When information is dense</b><p>Group it around the questions people actually ask.</p></article><article><b>When choices compete</b><p>Show what matters first, then give each decision room.</p></article><article><b>When the next step is uncertain</b><p>Connect discovery to an action people can complete.</p></article></div></div></section>
 <section class="section section-line"><div class="wrap process-stage"><div class="sec-head"><div><h2 class="section-heading">Design starts with people.</h2></div><p class="section-note">I listen to the client’s goals, learn what the audience needs, and find where the current experience falls short. That shared understanding guides the structure and visual decisions.</p></div><div class="steps"><article>${ic('search')}<h3>Understand the moment</h3><p>Who is here? What are they trying to do? Where does the current experience lose them?</p></article><article>${ic('layers')}<h3>Shape the route</h3><p>Give content, controls, and choices an order that matches the way people make sense of the task.</p></article><article>${ic('target')}<h3>Test the decisions</h3><p>Review real screens with real content, then refine the details that make the next step easier.</p></article></div></div></section>
 <section class="section section-line"><div class="wrap statement"><h2 class="section-heading" data-sc-in>Structure makes room for feeling.</h2><div class="statement-body" data-sc-in data-sc-stagger="90"><p class="lede">My background in architecture changed how I see a screen. It is a place people move through: a sequence of attention, decisions, and small moments of confidence.</p><p class="about-copy">I bring that spatial thinking to digital products, websites, and visual identities — using the character of each subject to shape a system that feels coherent and works in practice.</p><p class="case-more"><a data-route class="button" href="about/index.html">How I work <span class="orb">${ic('arrow-right')}</span></a></p></div></div></section>
