@@ -1,3 +1,5 @@
+> Historical note: this document records the v13 reference study. The active design system is documented in `DESIGN.md` §12.
+
 # ANALYSIS.md — reading the reference before drawing anything
 
 The brief: rebuild the landing page from the supplied reference image, then carry
