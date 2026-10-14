@@ -16,7 +16,7 @@ and composed around the task rather than a generic project-card template.
 
 ## Visual language
 
-- **Canvas:** warm greige `#e7e5df`; dark alternative `#181714`.
+- **Canvas:** warm greige `#e7e5df`; dark alternative `#101114`.
 - **Ink:** charcoal `#151412`; muted `#63615a`.
 - **Accent:** clay `#9d4227` on light and warm clay `#d98a63` on dark. It marks
   emphasis, focus, and active states.

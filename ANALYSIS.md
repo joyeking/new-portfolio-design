@@ -69,7 +69,7 @@ WCAG was computed rather than assumed:
 | muted `#63615a` / paper | **4.92:1** | AA body ✓ |
 | accent `#9d4227` / paper | **5.14:1** | AA links ✓ |
 | paper / ink pill | **14.61:1** | AAA ✓ |
-| ink `#eae7df` / dark `#181714` | **14.51:1** | AAA ✓ |
+| ink `#eae7df` / dark `#101114` | **15.28:1** | AAA ✓ |
 | muted `#9b978d` / dark | **6.15:1** | AA ✓ |
 | accent `#d98a63` / dark | **6.63:1** | AA ✓ |
 

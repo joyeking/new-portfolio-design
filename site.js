@@ -46,7 +46,7 @@
     rootEl.dataset.theme=next;
     rootEl.style.colorScheme=next;
     const meta=document.querySelector('meta[name="theme-color"]');
-    if(meta)meta.content=next==='dark'?'#181714':'#f3f1ea';
+    if(meta)meta.content=next==='dark'?'#101114':'#f3f1ea';
     if(modeSwitch)modeSwitch.setAttribute('aria-pressed',String(next==='dark'));
     if(persist){try{localStorage.setItem(themeKey,next)}catch(e){}}
   };
@@ -105,7 +105,9 @@
     if(!stage||!slides.length)return;
     let active=0,dragStart=null,lastWheel=0;
     const render=()=>{
-      const spread=Math.min(stage.clientWidth*.34,280);
+      // Neighbours sit beside the active design instead of hiding behind it: the
+      // gap follows the slide's own width, capped by the stage so the deck stays in frame.
+      const spread=Math.min((slides[0].offsetWidth||340)+64,stage.clientWidth*.5);
       slides.forEach((slide,index)=>{
         let offset=index-active;
         if(offset>slides.length/2)offset-=slides.length;
