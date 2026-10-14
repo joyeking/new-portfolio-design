@@ -1,9 +1,9 @@
-# Yohannes Assefa — digital design portfolio
+# Yohannes Assefa Portfolio
 
 A static, multi-page portfolio shaped around the problem each design solves and
 the approach that led to it.
 
-**Live:** https://joyeking.github.io/portfolio-recreation/
+**Live:** https://joyeking.github.io/new-portfolio-design/
 
 ## Pages
 
