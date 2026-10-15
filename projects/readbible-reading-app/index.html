@@ -32,33 +32,35 @@
 <article class="before"><span class="kicker">The brief</span><p>A Bible reader that had to feel like a quiet place in the word — not a database with verses inside it. Reading, plans, saved passages and prayer designed as one calm habit, on every device the reader owns.</p></article>
 <article class="after"><span class="kicker">What shipped</span><p>A reading app on three surfaces — a web reader, a desktop app and an iPhone app — with the verse of the day, reading plans, a Bible reader, bookmarks, highlights, notes, a prayer list, study tools and settings, in light and dark themes, plus a reading streak.</p></article>
 </div><div class="case-study" data-sc-in><h2>The system behind the screen.</h2><div><p>Reading is the anchor, and each supporting tool is placed according to how it is used. On a phone, the day’s reading and thumb-ready navigation come first. On desktop, a persistent sidebar keeps study tools close without narrowing the text. Saved passages and notes reconnect to the reader, so the app supports a routine instead of fragmenting it.</p><p><b>The tensions to resolve</b></p><ul><li data-sc-in>Keeping study tools close without letting them crowd the reading view.</li><li data-sc-in>One system across three postures — a phone in one hand, a desktop window, a browser tab.</li><li data-sc-in>Making saved scripture scannable once highlights and bookmarks run into the hundreds.</li></ul></div></div><div class="cs-decisions-wrap"><h2 class="section-heading" data-sc-in>Why the interface works this way.</h2><div class="cs-decisions" data-sc-in data-sc-stagger="90"><article data-sc-in><div><h3>Start with today’s reading</h3><p>The phone opens on the verse of the day, with the core destinations reachable by thumb so the reader can begin without navigating a menu.</p></div></article><article data-sc-in><div><h3>Give study its own space</h3><p>The Bible Blueprint has a dedicated surface for exploring scripture, with passages and notes linked back to the reading view.</p></div></article><article data-sc-in><div><h3>Make saved passages retrievable</h3><p>Bookmarks and highlights share one saved view, and desktop readers can open a passage alongside the current text.</p></div></article><article data-sc-in><div><h3>Keep the reading surface calm</h3><p>A light theme and dark alternative support longer sessions while preserving the same hierarchy across both.</p></div></article></div></div><div class="cs-results-wrap" data-sc-act="flow"><h2 class="section-heading" data-sc-in>What became easier.</h2><p class="section-copy" data-sc-in>A reading habit with a home on every device — the same app on the phone at night, the desktop in the morning, and the web wherever a browser is open.</p><div class="cs-results"><div data-sc-in><b data-sc-count="0 3">3</b><small>platforms — web, desktop and phone</small></div><div data-sc-in><b data-sc-count="0 5">5</b><small>tabs in the phone app</small></div><div data-sc-in><b data-sc-count="0 9">9</b><small>sections in the desktop sidebar</small></div><div data-sc-in><b data-sc-count="0 5">5</b><small>movements in the Bible Blueprint</small></div></div></div>
-<div class="gallery" data-sc-in data-sc-stagger="90"><img src="../../assets/work/bible-1.jpg" alt="ReadBible — project image" loading="lazy"><img src="../../assets/work/bible-3.jpg" alt="ReadBible — project image" loading="lazy"><img src="../../assets/work/bible-desktop.jpg" alt="ReadBible — project image" loading="lazy"></div></div></section>
+</div></section>
 
-<section class="section section-line" data-sc-act="flow"><div class="wrap">
-<div class="sec-head" data-sc-in><h2 class="section-heading">App UI/UX Design</h2><p class="section-note">A quiet reading system in both themes: the day’s passage stays central, with saved scripture, the library, and plans within thumb reach.</p></div>
-<div class="browser-frame" data-sc-in data-sc-spotlight>
-<div class="frame-bar">
-<span class="dots"><i></i><i></i><i></i></span>
-<span class="frame-url">readbible-reading-app — captured designs</span>
-</div>
-<div class="device-row showcase-toggle" role="group" aria-label="Device size">
-<button class="device is-active" data-img="../../assets/work/bible-app-1.jpg" data-w="390px" type="button" aria-pressed="true">Home · light</button><button class="device" data-img="../../assets/work/bible-app-2.jpg" data-w="390px" type="button" aria-pressed="false">Reader · light</button><button class="device" data-img="../../assets/work/bible-app-3.jpg" data-w="390px" type="button" aria-pressed="false">Library · light</button><button class="device" data-img="../../assets/work/bible-app-4.jpg" data-w="390px" type="button" aria-pressed="false">Saved · dark</button><button class="device" data-img="../../assets/work/bible-app-5.jpg" data-w="390px" type="button" aria-pressed="false">Plan · dark</button>
-</div>
-<div class="frame-stage"><div class="frame-screen" style="width:min(390px, 100%)">
-<img class="showcase-img" src="../../assets/work/bible-app-1.jpg" alt="ReadBible — home · light" loading="lazy" style="width:100%;height:100%;object-fit:contain;object-position:top;display:block">
-</div></div></div></div></section><script>
-document.querySelectorAll('.showcase-toggle .device').forEach(function(btn){
-  btn.addEventListener('click',function(){
-     document.querySelectorAll('.showcase-toggle .device').forEach(function(b){b.classList.toggle('is-active',b===btn);b.setAttribute('aria-pressed',String(b===btn))});
-    var img=document.querySelector('.showcase-img');
-    img.src=btn.dataset.img;
-    img.alt=img.alt.replace(/— .*$/,'— '+btn.textContent.trim().toLowerCase());
-    var screen=img.closest('.frame-screen');
-     screen.style.width='min('+btn.dataset.w+', 100%)';screen.style.maxWidth='100%';
+
+<section class="section section-line app-showcase" id="app-uiux"><div class="wrap">
+<div class="sec-head" data-sc-in><h2 class="section-heading">App UI/UX Design</h2><p class="section-note">Nine screens from one reading system, light and dark. Today’s passage leads on the phone; the library, saved scripture, and plans sit within thumb reach — the same order holds when the reader moves to a larger screen.</p></div>
+<div class="screen-gallery is-phone" data-sc-in><figure class="screen-plate"><button class="screen-plate-media" type="button" data-screen-full="../../assets/work/bible-2.jpg" data-screen-caption="Verse of the day · light" aria-label="View the Verse of the day · light screen larger"><img src="../../assets/work/bible-2.jpg" alt="Verse of the day · light — app screen" loading="lazy"></button><figcaption><b>01</b><span>Verse of the day · light</span></figcaption></figure><figure class="screen-plate"><button class="screen-plate-media" type="button" data-screen-full="../../assets/work/bible-app-1.jpg" data-screen-caption="Home · light" aria-label="View the Home · light screen larger"><img src="../../assets/work/bible-app-1.jpg" alt="Home · light — app screen" loading="lazy"></button><figcaption><b>02</b><span>Home · light</span></figcaption></figure><figure class="screen-plate"><button class="screen-plate-media" type="button" data-screen-full="../../assets/work/bible-app-2.jpg" data-screen-caption="Reader · light" aria-label="View the Reader · light screen larger"><img src="../../assets/work/bible-app-2.jpg" alt="Reader · light — app screen" loading="lazy"></button><figcaption><b>03</b><span>Reader · light</span></figcaption></figure><figure class="screen-plate"><button class="screen-plate-media" type="button" data-screen-full="../../assets/work/bible-app-3.jpg" data-screen-caption="Library · light" aria-label="View the Library · light screen larger"><img src="../../assets/work/bible-app-3.jpg" alt="Library · light — app screen" loading="lazy"></button><figcaption><b>04</b><span>Library · light</span></figcaption></figure><figure class="screen-plate"><button class="screen-plate-media" type="button" data-screen-full="../../assets/work/bible-app-4.jpg" data-screen-caption="Saved · dark" aria-label="View the Saved · dark screen larger"><img src="../../assets/work/bible-app-4.jpg" alt="Saved · dark — app screen" loading="lazy"></button><figcaption><b>05</b><span>Saved · dark</span></figcaption></figure><figure class="screen-plate"><button class="screen-plate-media" type="button" data-screen-full="../../assets/work/bible-app-5.jpg" data-screen-caption="Plan · dark" aria-label="View the Plan · dark screen larger"><img src="../../assets/work/bible-app-5.jpg" alt="Plan · dark — app screen" loading="lazy"></button><figcaption><b>06</b><span>Plan · dark</span></figcaption></figure></div><div class="screen-gallery is-wide" data-sc-in><figure class="screen-plate is-wide"><button class="screen-plate-media" type="button" data-screen-full="../../assets/work/bible-desktop.jpg" data-screen-caption="Desktop reader · light" aria-label="View the Desktop reader · light screen larger"><img src="../../assets/work/bible-desktop.jpg" alt="Desktop reader · light — app screen" loading="lazy"></button><figcaption><b>07</b><span>Desktop reader · light</span></figcaption></figure><figure class="screen-plate is-wide"><button class="screen-plate-media" type="button" data-screen-full="../../assets/work/bible-cover.jpg" data-screen-caption="Library grid · dark" aria-label="View the Library grid · dark screen larger"><img src="../../assets/work/bible-cover.jpg" alt="Library grid · dark — app screen" loading="lazy"></button><figcaption><b>08</b><span>Library grid · dark</span></figcaption></figure><figure class="screen-plate is-wide"><button class="screen-plate-media" type="button" data-screen-full="../../assets/work/bible-1.jpg" data-screen-caption="Reading plan · light" aria-label="View the Reading plan · light screen larger"><img src="../../assets/work/bible-1.jpg" alt="Reading plan · light — app screen" loading="lazy"></button><figcaption><b>09</b><span>Reading plan · light</span></figcaption></figure></div></div></section><dialog class="screen-lightbox" data-screen-lightbox aria-labelledby="screen-lightbox-caption">
+<figure>
+<img alt="" decoding="async">
+<figcaption><span id="screen-lightbox-caption" data-lightbox-caption></span><button type="button" class="screen-lightbox-close" data-lightbox-close>Close</button></figcaption>
+</figure>
+</dialog>
+<script>
+(function(){
+  var dlg=document.querySelector('[data-screen-lightbox]');
+  if(!dlg||window.__screenLightboxReady)return;window.__screenLightboxReady=true;
+  var img=dlg.querySelector('img'),cap=dlg.querySelector('[data-lightbox-caption]');
+  document.querySelectorAll('[data-screen-full]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var label=btn.getAttribute('data-screen-caption')||'';
+      img.src=btn.getAttribute('data-screen-full');
+      img.alt=label+' screen';
+      cap.textContent=label;
+      if(typeof dlg.showModal==='function'){dlg.showModal();}else{dlg.setAttribute('open','');}
+    });
   });
-});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
+  dlg.querySelector('[data-lightbox-close]').addEventListener('click',function(){dlg.close();});
+})();
 </script>
-
 <section class="section section-line"><div class="wrap"><p class="kicker">Keep exploring</p><div class="cs-next">
 <a data-route class="cs-next-card" data-sc-in href="../../projects/museum-of-art-in-addis/index.html"><span class="kicker">Previous story</span><h3>Museum of Art in Addis</h3></a>
 <a data-route class="cs-next-card" href="../../projects/https-ettravel-framer-website/index.html"><span class="kicker">Next story →</span><h3>ETtravel Travel Agency</h3></a>

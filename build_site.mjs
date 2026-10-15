@@ -191,9 +191,9 @@ const PROJECTS = [
     results: [['6', 'weeks from brief to launch'], ['4', 'pages, home to reservation'], ['3', 'ways into the collection'], ['100%', 'responsive, built in Framer']],
     outcome: 'A professional first impression with a durable foundation — a digital presence the institution can extend into a richer ecosystem.',
     testimonial: null,
-    phoneHead: 'The visit starts in the hand.',
-    phoneNote: 'Welcome, sign-up, log-in, home, and the artist index — the same catalogue order as the site, set for one thumb.',
-    phoneShots: [['Welcome', `${W}/museum-phone-1.jpg`], ['Sign up', `${W}/museum-phone-2.jpg`], ['Visit', `${W}/museum-phone-3.jpg`], ['Log in', `${W}/museum-phone-4.jpg`], ['Menu', `${W}/museum-phone-5.jpg`], ['Home', `${W}/museum-phone-6.jpg`], ['Explore', `${W}/museum-phone-7.jpg`], ['Artists', `${W}/museum-phone-8.jpg`]],
+    screensHead: 'App UI/UX Design',
+    screensNote: 'Eight screens from one visit: welcome and access first, then the collection and the artists — the same catalogue order as the site, set for one thumb.',
+    screens: [['Welcome', `${W}/museum-phone-1.jpg`], ['Sign up', `${W}/museum-phone-2.jpg`], ['Visit', `${W}/museum-phone-3.jpg`], ['Log in', `${W}/museum-phone-4.jpg`], ['Menu', `${W}/museum-phone-5.jpg`], ['Home', `${W}/museum-phone-6.jpg`], ['Explore', `${W}/museum-phone-7.jpg`], ['Artists', `${W}/museum-phone-8.jpg`]],
   },
   {
     slug: 'readbible-reading-app', cat: 'UI / UX Design', title: 'ReadBible',
@@ -203,7 +203,7 @@ const PROJECTS = [
     year: '2026', industry: 'Faith & spirituality', client: 'ReadBible', duration: 'Ongoing',
     pages: 'Web · desktop · iPhone', stack: 'A reading-centred system that adapts its tools to phone, desktop, and browser.',
     cover: `${W}/readbible-main.jpg`,
-    gallery: [`${W}/bible-1.jpg`, `${W}/bible-3.jpg`, `${W}/bible-desktop.jpg`],
+    gallery: [],
     brief: 'A Bible reader that had to feel like a quiet place in the word — not a database with verses inside it. Reading, plans, saved passages and prayer designed as one calm habit, on every device the reader owns.',
     shipped: 'A reading app on three surfaces — a web reader, a desktop app and an iPhone app — with the verse of the day, reading plans, a Bible reader, bookmarks, highlights, notes, a prayer list, study tools and settings, in light and dark themes, plus a reading streak.',
     approach: 'Reading is the anchor, and each supporting tool is placed according to how it is used. On a phone, the day’s reading and thumb-ready navigation come first. On desktop, a persistent sidebar keeps study tools close without narrowing the text. Saved passages and notes reconnect to the reader, so the app supports a routine instead of fragmenting it.',
@@ -219,9 +219,19 @@ const PROJECTS = [
     results: [['3', 'platforms — web, desktop and phone'], ['5', 'tabs in the phone app'], ['9', 'sections in the desktop sidebar'], ['5', 'movements in the Bible Blueprint']],
     outcome: 'A reading habit with a home on every device — the same app on the phone at night, the desktop in the morning, and the web wherever a browser is open.',
     testimonial: null,
-    shots: [['Home · light', `${W}/bible-app-1.jpg`, '390px'], ['Reader · light', `${W}/bible-app-2.jpg`, '390px'], ['Library · light', `${W}/bible-app-3.jpg`, '390px'], ['Saved · dark', `${W}/bible-app-4.jpg`, '390px'], ['Plan · dark', `${W}/bible-app-5.jpg`, '390px']],
-    shotsHead: 'App UI/UX Design',
-    shotsNote: 'A quiet reading system in both themes: the day’s passage stays central, with saved scripture, the library, and plans within thumb reach.',
+    screens: [
+      ['Verse of the day · light', `${W}/bible-2.jpg`],
+      ['Home · light', `${W}/bible-app-1.jpg`],
+      ['Reader · light', `${W}/bible-app-2.jpg`],
+      ['Library · light', `${W}/bible-app-3.jpg`],
+      ['Saved · dark', `${W}/bible-app-4.jpg`],
+      ['Plan · dark', `${W}/bible-app-5.jpg`],
+      ['Desktop reader · light', `${W}/bible-desktop.jpg`, 'wide'],
+      ['Library grid · dark', `${W}/bible-cover.jpg`, 'wide'],
+      ['Reading plan · light', `${W}/bible-1.jpg`, 'wide'],
+    ],
+    screensHead: 'App UI/UX Design',
+    screensNote: 'Nine screens from one reading system, light and dark. Today’s passage leads on the phone; the library, saved scripture, and plans sit within thumb reach — the same order holds when the reader moves to a larger screen.',
   },
 ];
 
@@ -274,8 +284,9 @@ const ARCHIVE = [
     problem_line: 'Make the everyday money actions visible before they disappear inside account menus.',
     desc: 'A balance-led home screen brings Send and Request forward, while Home, Payments, and Wallet keep the main destinations easy to reach.',
     image: `${W}/limitless-3.jpg`,
-    shots: [['Splash', `${W}/limitless-1.jpg`, '390px'], ['Onboarding', `${W}/limitless-2.jpg`, '390px'], ['Home', `${W}/limitless-3.jpg`, '390px'], ['Payments', `${W}/limitless-4.jpg`, '390px'], ['Wallet', `${W}/limitless-5.jpg`, '390px']],
-    shotsHead: 'A focused payment flow.', shotsNote: 'Follow the transition from first-use onboarding to a clear balance, payment actions, and wallet details.' },
+    screens: [['Splash', `${W}/limitless-1.jpg`], ['Onboarding', `${W}/limitless-2.jpg`], ['Home', `${W}/limitless-3.jpg`], ['Payments', `${W}/limitless-4.jpg`], ['Wallet', `${W}/limitless-5.jpg`]],
+    screensHead: 'App UI/UX Design',
+    screensNote: 'From first launch to a focused balance: onboarding, the home balance, payments, and wallet — five screens that keep the everyday money action in reach.' },
 ];
 
 const rel = (depth, path) => '../'.repeat(depth) + path;
@@ -372,13 +383,63 @@ ${secHead(p.slug === 'readbible-reading-app' ? '' : 'Selected screens', p.shotsH
 ${frame}</div></section>${script}`;
 }
 
-// A wall of phone screens for projects that also shipped a phone design (EYETA).
-function phoneShowcase(p, depth) {
-  const screens = p.phoneShots.map(([label, src]) =>
-    `<a class="app-uiux-screen" href="${rel(depth, src)}" target="_blank" rel="noopener" aria-label="Open ${p.title} — ${label} screen"><img src="${rel(depth, src)}" alt="${p.title} — ${label} screen" loading="lazy"><span>${label}</span></a>`).join('');
-  return `<section class="section section-line app-uiux-section" data-sc-act="flow"><div class="wrap">
-${secHead('App UI/UX Design', p.phoneHead || 'The same system in the hand.', p.phoneNote || 'The phone layouts follow the same order as the site: one clear route, with the collection close behind.')}
-<div class="app-uiux-screens phone-wall">${screens}</div></div></section>`;
+// App screens shown as editorial plates: square edges, a hairline, and a mono
+// caption — every screen visible at once instead of one-at-a-time app chrome.
+// `link` turns a plate into a jump (used on the work index); without it the
+// plate opens the screenshot larger in the page's lightbox.
+function screenPlate([label, src, kind], depth, index, link = null) {
+  const wide = kind === 'wide';
+  const num = String(index + 1).padStart(2, '0');
+  const img = `<img src="${rel(depth, src)}" alt="${label} — app screen" loading="lazy">`;
+  const media = link
+    ? `<a class="screen-plate-media" href="${link}" aria-label="Read the case study — ${label} screen">${img}</a>`
+    : `<button class="screen-plate-media" type="button" data-screen-full="${rel(depth, src)}" data-screen-caption="${label}" aria-label="View the ${label} screen larger">${img}</button>`;
+  return `<figure class="screen-plate${wide ? ' is-wide' : ''}">${media}<figcaption><b>${num}</b><span>${label}</span></figcaption></figure>`;
+}
+
+// One in-page lightbox per page, reused by every plate on it.
+function screenLightbox() {
+  return `<dialog class="screen-lightbox" data-screen-lightbox aria-labelledby="screen-lightbox-caption">
+<figure>
+<img alt="" decoding="async">
+<figcaption><span id="screen-lightbox-caption" data-lightbox-caption></span><button type="button" class="screen-lightbox-close" data-lightbox-close>Close</button></figcaption>
+</figure>
+</dialog>
+<script>
+(function(){
+  var dlg=document.querySelector('[data-screen-lightbox]');
+  if(!dlg||window.__screenLightboxReady)return;window.__screenLightboxReady=true;
+  var img=dlg.querySelector('img'),cap=dlg.querySelector('[data-lightbox-caption]');
+  document.querySelectorAll('[data-screen-full]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var label=btn.getAttribute('data-screen-caption')||'';
+      img.src=btn.getAttribute('data-screen-full');
+      img.alt=label+' screen';
+      cap.textContent=label;
+      if(typeof dlg.showModal==='function'){dlg.showModal();}else{dlg.setAttribute('open','');}
+    });
+  });
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
+  dlg.querySelector('[data-lightbox-close]').addEventListener('click',function(){dlg.close();});
+})();
+</script>`;
+}
+
+// The App UI/UX section: every screen the project shipped, phones first, then
+// the wide surfaces, each numbered so the set reads as one system.
+function appShowcase(p, depth) {
+  const screens = p.screens || [];
+  if (!screens.length) return '';
+  const phones = screens.filter(s => s[2] !== 'wide');
+  const wides = screens.filter(s => s[2] === 'wide');
+  let n = 0;
+  const groups = [
+    phones.length ? `<div class="screen-gallery is-phone" data-sc-in>${phones.map(s => screenPlate(s, depth, n++)).join('')}</div>` : '',
+    wides.length ? `<div class="screen-gallery is-wide" data-sc-in>${wides.map(s => screenPlate(s, depth, n++)).join('')}</div>` : '',
+  ].join('');
+  return `<section class="section section-line app-showcase" id="app-uiux"><div class="wrap">
+${secHead('', p.screensHead || 'App UI/UX Design', p.screensNote || '')}
+${groups}</div></section>${screenLightbox()}`;
 }
 
 function caseStudySections(p) {
@@ -403,19 +464,19 @@ function testimonialHtml(p) {
 }
 
 function detailPage(p, all) {
-  const meta = '';
   const gallery = p.gallery || [p.cover];
   const images = gallery.map(x => `<img src="${rel(2, x)}" alt="${p.title} — project image" loading="lazy">`).join('');
+  const galleryBlock = images ? `<div class="gallery" data-sc-in data-sc-stagger="90">${images}</div>` : '';
   const i = all.indexOf(p);
   const nxt = all[(i + 1) % all.length];
   const prv = all[(i - 1 + all.length) % all.length];
   const hero = `<section class="project-detail-hero"><div class="wrap case-hero"><div class="case-hero-copy"><h1 data-sc-kinetic="words">${p.title}</h1><p class="cs-problem"><b>The challenge</b>${p.problem_line}</p></div><img class="detail-hero-image" src="${rel(2, p.cover)}" alt="${p.title} — opening view"><div class="detail-meta" data-sc-in><div><b>Client</b><span>${p.client}</span></div><div><b>Industry</b><span>${p.industry}</span></div><div><b>Type</b><span>${p.kind}</span></div><div><b>Year</b><span>${p.year}</span></div><div><b>Timeline</b><span>${p.duration}</span></div></div></div></section>`;
   const body = `${hero}
 <section class="section case-body"><div class="wrap"><h2 class="section-heading" data-sc-in>From the first question to the finished system.</h2>${caseStudySections(p)}
-<div class="gallery" data-sc-in data-sc-stagger="90">${images}</div></div></section>
+${galleryBlock}</div></section>
 ${testimonialHtml(p)}
-${p.visit ? livePreview(p, 2) : staticScreens(p, 2)}
-${p.phoneShots ? phoneShowcase(p, 2) : ''}
+${p.visit ? livePreview(p, 2) : (p.screens ? '' : staticScreens(p, 2))}
+${p.screens ? appShowcase(p, 2) : ''}
 <section class="section section-line"><div class="wrap"><p class="kicker">Keep exploring</p><div class="cs-next">
 <a data-route class="cs-next-card" data-sc-in href="${rel(2, 'projects/' + prv.slug + '/index.html')}"><span class="kicker">Previous story</span><h3>${prv.title}</h3></a>
 <a data-route class="cs-next-card" href="${rel(2, 'projects/' + nxt.slug + '/index.html')}"><span class="kicker">Next story →</span><h3>${nxt.title}</h3></a>
@@ -473,12 +534,14 @@ const archiveCards = graphicStudies.map((a, i) =>
 const limitless = ARCHIVE.find(a => a.slug === 'limitless-finance-app');
 const readBible = PROJECTS.find(p => p.slug === 'readbible-reading-app');
 const museum = PROJECTS.find(p => p.slug === 'museum-of-art-in-addis');
-// Phone screens laid out beside each project's heading (light and dark together).
-const appScreens = (p, shots) => `<div class="app-uiux-screens">${shots.map(([label, src]) => `<a data-route class="app-uiux-screen" href="${rel(1, 'projects/' + p.slug + '/index.html')}" aria-label="View ${p.title} — ${label} screen"><img src="${rel(1, src)}" alt="${p.title} — ${label} screen" loading="lazy"><span>${label}</span></a>`).join('')}</div>`;
-const appProject = (p, shots, cta) => `<article class="app-uiux-project"><div class="app-uiux-heading"><h3>${p.uiuxTitle || p.title}</h3><p>${p.desc}</p><a data-route class="text-link" href="${rel(1, 'projects/' + p.slug + '/index.html')}">${cta} ${ic('arrow-right')}</a></div>${appScreens(p, shots)}</article>`;
-const readBibleShots = [['Home · light', `${W}/bible-app-1.jpg`], ['Reader · light', `${W}/bible-app-2.jpg`], ['Library · light', `${W}/bible-app-3.jpg`], ['Saved · dark', `${W}/bible-app-4.jpg`], ['Plan · dark', `${W}/bible-app-5.jpg`]];
-const museumShots = [['Welcome', `${W}/museum-phone-1.jpg`], ['Sign up', `${W}/museum-phone-2.jpg`], ['Log in', `${W}/museum-phone-4.jpg`], ['Home', `${W}/museum-phone-6.jpg`], ['Artists', `${W}/museum-phone-8.jpg`]];
-const appUiuxSection = `<section class="section section-line app-uiux-section" id="app-uiux"><div class="wrap">${secHead('', 'App UI/UX Design', 'Phone interfaces shaped around the task, with each screen carrying one clear next step.')}<div class="app-uiux-projects">${appProject(readBible, readBibleShots, 'Explore the ReadBible case study')}${appProject(limitless, limitless.shots, 'Explore the Limitless case study')}${appProject({ ...museum, uiuxTitle: 'Museum of Art in Addis' }, museumShots, 'Explore the museum case study')}</div></div></section>`;
+// App screens, laid out under each project's own heading. The index previews
+// the first five phones; the case study carries the full, numbered set.
+const appProject = (p, cta) => {
+  const link = rel(1, 'projects/' + p.slug + '/index.html');
+  const phones = (p.screens || []).filter(s => s[2] !== 'wide').slice(0, 5);
+  return `<article class="app-project"><div class="app-project-head"><h3>${p.title}</h3><div><p>${p.desc}</p><a data-route class="text-link" href="${link}">${cta} ${ic('arrow-right')}</a></div></div><div class="screen-gallery is-phone" data-sc-in>${phones.map((s, i) => screenPlate(s, 1, i, link)).join('')}</div></article>`;
+};
+const appUiuxSection = `<section class="section section-line app-uiux-section" id="app-uiux"><div class="wrap">${secHead('', 'App UI/UX Design', 'Phone interfaces shaped around the task, with each screen carrying one clear next step.')}<div class="app-uiux-projects">${appProject(readBible, 'Explore the ReadBible case study')}${appProject(limitless, 'Explore the Limitless case study')}${appProject(museum, 'Explore the museum case study')}</div></div></section>${screenLightbox()}`;
 const projectsPage = `<section class="page-hero projects-intro"><div class="wrap page-head"><div><p class="kicker">Selected work &amp; visual studies</p><h1>Find the friction.<br><em>Follow the thinking.</em></h1></div><p class="page-note">Every piece starts with a communication problem: what is unclear, what competes for attention, or what should happen next. The work below shows how structure and visual choices resolve it.</p></div></section>
 <section class="section section-line" id="selected"><div class="wrap">${secHead('Case studies', 'Design decisions in context.', 'Explore the brief, the constraint, and the reasoning behind the finished experience.')}<div class="selected-snap" data-snap-carousel><div class="snap-tools"><div class="snap-controls"><button class="snap-control" type="button" data-snap-prev aria-label="Previous project">${ic('arrow-left')}</button><button class="snap-control" type="button" data-snap-next aria-label="Next project">${ic('arrow-right')}</button></div></div><div class="snap-track" data-snap-track tabindex="0" role="region" aria-label="Case studies. Scroll horizontally to browse.">${selectedCards}</div></div></div></section>
 <section class="section section-line ideas-section" id="ideas" data-sc-act="pin" data-sc-span="${Math.max(1.5, (graphicStudies.length - 1) * .45)}" data-carousel-pin><div data-sc-stage class="wrap ideas-pin-stage">${secHead('Graphic design', 'Poster and social media posts', 'Ideas made visible.')}<div class="design-carousel" data-design-carousel><button class="design-arrow design-prev" type="button" aria-label="Previous design">${ic('arrow-left')}</button><div class="design-stage" tabindex="0" role="region" aria-label="Poster and social media designs. Scroll to move through the work, or use the controls." data-design-stage><div class="design-backdrop" aria-hidden="true"></div><div class="design-track">${archiveCards}</div></div><button class="design-arrow design-next" type="button" aria-label="Next design">${ic('arrow-right')}</button></div><div class="design-caption" aria-live="polite"><span class="design-caption-title" data-design-title>${graphicStudies[0].title}</span><span class="design-caption-kind" data-design-kind>${graphicStudies[0].kind}</span></div></div></section>${appUiuxSection}${contact()}`;
@@ -504,7 +567,7 @@ for (const a of ARCHIVE) {
   const figure = a.figure === 'poster'
     ? `<div class="poster-stage" data-sc-in><img src="${rel(2, a.image)}" alt="${a.title} — full artwork" loading="lazy"></div>`
     : a.figure === 'phone' ? '' : `<img class="detail-hero-image" src="${rel(2, a.image)}" alt="${a.title}">`;
-  const showcase = a.figure === 'poster' ? '' : staticScreens(a, 2);
+  const showcase = a.figure === 'poster' ? '' : (a.screens ? appShowcase(a, 2) : staticScreens(a, 2));
   const body = `${head}${figure}${showcase}${contact()}`;
   writeFileSync(f, doc(a.title + ' — Yohannes Assefa', 2, body, a.desc, 'projects', 'projects/' + a.slug + '/', a.image));
 }

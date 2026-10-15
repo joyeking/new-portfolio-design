@@ -35,6 +35,11 @@ and composed around the task rather than a generic project-card template.
 - **Work index:** case studies and visual studies with a direct problem statement.
 - **Digital case studies:** challenge and project image; brief and shipped response;
   approach; design decisions; outcome; gallery and live build where available.
+- **App case studies:** the same story plus an *App UI/UX Design* section — every
+  screen the project shipped shown at once on square plates with hairline edges and
+  a numbered mono caption (phones first, wide surfaces after), opened larger in an
+  in-page lightbox. Prefer real phone screens; pair them with desktop screens
+  rather than inventing views to make up a count.
 - **Visual studies:** challenge and design response, followed by the artifact.
 - **About and field notes:** the same visual language, paced for reading.
 
